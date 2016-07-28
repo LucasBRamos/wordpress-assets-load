@@ -1,0 +1,20 @@
+{
+  "name": "lucasbramos/wordpress-assets-load",
+  "description": "Classe que irá realizar o carregamento de assets em plugins wordpress",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "lucasbramos",
+      "email": "lucasramo53@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "phpunit/phpunit": "^5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "LucasBRamos\\WordpressAssetsLoad\\" : "src"
+    }
+  }
+}
