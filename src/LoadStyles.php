@@ -13,7 +13,7 @@ class LoadStyles extends LoadConfig
    * @param $path_to_assets
    * @param array $styles
    */
-  public function __construct($plugin_name, $plugin_version, array $styles, $path_to_assets, $media = 'all')
+  public function __construct($plugin_name, $plugin_version, array $styles, $path_to_assets = null, $media = 'all')
   {
     $this->plugin_name = $plugin_name;
     $this->plugin_version = $plugin_version;
