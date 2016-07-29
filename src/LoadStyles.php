@@ -1,6 +1,6 @@
 <?php namespace LucasBRamos\WordpressAssetsLoad;
 
-class LoadStyles extends LoadConfig
+class LoadStyles extends LoadConfig implements ILoadAssets
 {
   private $media;
 
@@ -22,7 +22,7 @@ class LoadStyles extends LoadConfig
     $this->media = $media;
   }
 
-  public function enqueue_styles()
+  public function enqueue()
   {
     if (count($this->styles) < 1) return;
 

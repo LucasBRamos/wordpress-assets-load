@@ -1,6 +1,6 @@
 <?php namespace LucasBRamos\WordpressAssetsLoad;
 
-class LoadScripts extends LoadConfig
+class LoadScripts extends LoadConfig implements ILoadAssets
 {
   private $scripts = [];
 
@@ -19,7 +19,7 @@ class LoadScripts extends LoadConfig
     $this->path_to_assets = $path_to_assets;
   }
 
-  public function enqueue_scripts()
+  public function enqueue()
   {
     if (count($this->scripts) < 1) return;
 
