@@ -8,10 +8,10 @@ class LoadScripts extends LoadConfig
    * LoadScripts constructor.
    * @param $plugin_name
    * @param $plugin_version
-   * @param $is_admin
+   * @param $path_to_assets
    * @param array $scripts
    */
-  public function __construct($plugin_name, $plugin_version, array $scripts, $path_to_assets)
+  public function __construct($plugin_name, $plugin_version, array $scripts, $path_to_assets = null)
   {
     $this->plugin_name = $plugin_name;
     $this->plugin_version = $plugin_version;
