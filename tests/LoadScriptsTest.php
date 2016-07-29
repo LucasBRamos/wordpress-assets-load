@@ -2,6 +2,6 @@
 
 use LucasBRamos\WordpressAssetsLoad\WordpressAssetsLoad;
 
-class WordpressAssetsLoadTest extends PHPUnit_Framework_TestCase
+class LoadScriptsTest extends PHPUnit_Framework_TestCase
 {
 }
