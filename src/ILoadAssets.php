@@ -3,4 +3,6 @@
 interface ILoadAssets
 {
   public function enqueue();
+
+  public function getAssets();
 }

@@ -42,4 +42,9 @@ class LoadStyles extends LoadConfig implements ILoadAssets
         wp_enqueue_style($this->styles['name'] . '-' . $this->plugin_name, $this->path_to_assets . $script['file'], $deps, $this->plugin_version, $this->media);
     }
   }
+
+  public function getAssets()
+  {
+    return $this->styles;
+  }
 }

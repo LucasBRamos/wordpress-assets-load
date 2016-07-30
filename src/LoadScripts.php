@@ -39,4 +39,9 @@ class LoadScripts extends LoadConfig implements ILoadAssets
         wp_enqueue_script($this->scripts['name'] . '-' . $this->plugin_name, $this->path_to_assets . $script['file'], $deps, $this->plugin_version, true);
     }
   }
+
+  public function getAssets()
+  {
+    return $this->scripts;
+  }
 }
