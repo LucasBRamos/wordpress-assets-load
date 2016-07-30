@@ -1,13 +1,34 @@
 <?php namespace LucasBRamos\WordpressAssetsLoad;
 
+/**
+ *
+ * Carrega os styles utilizando a API do WordPress
+ *
+ * @author Lucas Bernieri Ramos
+ * @package LucasBRamos\WordpressAssetsLoad
+ */
 class LoadStyles extends LoadConfig implements ILoadAssets
 {
+  /**
+   *
+   * Tipo de média que o style deve ser exibido. Ex (all, screen)
+   *
+   * @var string
+   */
   private $media;
 
+  /**
+   *
+   * Armazena todos os styles passados na instanciação da classe
+   *
+   * @var array
+   */
   private $styles = [];
 
   /**
-   * LoadScripts constructor.
+   *
+   * Construtor
+   *
    * @param $plugin_name
    * @param $plugin_version
    * @param $path_to_assets
@@ -15,13 +36,19 @@ class LoadStyles extends LoadConfig implements ILoadAssets
    */
   public function __construct($plugin_name, $plugin_version, array $styles, $path_to_assets = null, $media = 'all')
   {
-    $this->plugin_name = $plugin_name;
-    $this->plugin_version = $plugin_version;
-    $this->styles = $styles;
-    $this->path_to_assets = $path_to_assets;
-    $this->media = $media;
+    $this->plugin_name       = $plugin_name;
+    $this->plugin_version    = $plugin_version;
+    $this->styles            = $styles;
+    $this->path_to_assets    = $path_to_assets;
+    $this->media             = $media;
   }
 
+  /**
+   *
+   * Enfileira todos os assets passados
+   *
+   * @return void
+   */
   public function enqueue()
   {
     if (count($this->styles) < 1) return;
@@ -43,6 +70,13 @@ class LoadStyles extends LoadConfig implements ILoadAssets
     }
   }
 
+
+  /**
+   *
+   * Retorna todos os styles passados
+   *
+   * @return array
+   */
   public function getAssets()
   {
     return $this->styles;
