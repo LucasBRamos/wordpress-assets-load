@@ -32,10 +32,6 @@ class LoadStyles extends LoadConfig
       if(array_key_exists('deps', $this->styles))
         $deps = $this->styles['deps'];
 
-      if($this->is_admin) {
-        wp_enqueue_media();
-      }
-
       if($this->styles['is_external'])
         wp_enqueue_style($this->styles['name'] . '-' . $this->plugin_name, $this->styles['file'], $deps, $this->plugin_version, true);
       else
