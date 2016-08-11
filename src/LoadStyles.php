@@ -53,7 +53,7 @@ class LoadStyles extends LoadConfig implements ILoadAssets
   {
     if (count($this->styles) < 1) return;
 
-    foreach ($this->styles as $script) {
+    foreach ($this->styles as $style) {
       $deps = null;
 
       if(array_key_exists('deps', $this->styles))
@@ -64,9 +64,9 @@ class LoadStyles extends LoadConfig implements ILoadAssets
       }
 
       if($this->styles['is_external'])
-        wp_enqueue_style($this->styles['name'] . '-' . $this->plugin_name, $this->styles['file'], $deps, $this->plugin_version, true);
+        wp_enqueue_style($style['name'] . '-' . $this->plugin_name, $style['file'], $deps, $this->plugin_version, true);
       else
-        wp_enqueue_style($this->styles['name'] . '-' . $this->plugin_name, $this->path_to_assets . $script['file'], $deps, $this->plugin_version, $this->media);
+        wp_enqueue_style($style['name'] . '-' . $this->plugin_name, $this->path_to_assets . $style['file'], $deps, $this->plugin_version, $this->media);
     }
   }
 
