@@ -59,10 +59,6 @@ class LoadStyles extends LoadConfig implements ILoadAssets
       if(array_key_exists('deps', $this->styles))
         $deps = $this->styles['deps'];
 
-      if($this->is_admin) {
-        wp_enqueue_media();
-      }
-
       if($this->styles['is_external'])
         wp_enqueue_style($style['name'] . '-' . $this->plugin_name, $style['file'], $deps, $this->plugin_version, true);
       else
