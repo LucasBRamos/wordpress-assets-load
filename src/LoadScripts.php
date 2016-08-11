@@ -56,9 +56,9 @@ class LoadScripts extends LoadConfig implements ILoadAssets
       }
 
       if($this->scripts['is_external'])
-        wp_enqueue_script($this->scripts['name'] . '-' . $this->plugin_name, $this->scripts['file'], $deps, $this->plugin_version, true);
+        wp_enqueue_script($script['name'] . '-' . $this->plugin_name, $script['file'], $deps, $this->plugin_version, true);
       else
-        wp_enqueue_script($this->scripts['name'] . '-' . $this->plugin_name, $this->path_to_assets . $script['file'], $deps, $this->plugin_version, true);
+        wp_enqueue_script($script['name'] . '-' . $this->plugin_name, $this->path_to_assets . $script['file'], $deps, $this->plugin_version, true);
     }
   }
 
