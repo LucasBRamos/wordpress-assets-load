@@ -56,10 +56,10 @@ class LoadStyles extends LoadConfig implements ILoadAssets
     foreach ($this->styles as $style) {
       $deps = null;
 
-      if(array_key_exists('deps', $this->styles))
-        $deps = $this->styles['deps'];
+      if(array_key_exists('deps', $style))
+        $deps = $style['deps'];
 
-      if($this->styles['is_external'])
+      if($style['is_external'])
         wp_enqueue_style($style['name'] . '-' . $this->plugin_name, $style['file'], $deps, $this->plugin_version, true);
       else
         wp_enqueue_style($style['name'] . '-' . $this->plugin_name, $this->path_to_assets . $style['file'], $deps, $this->plugin_version, $this->media);
