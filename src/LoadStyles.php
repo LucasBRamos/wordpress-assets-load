@@ -62,7 +62,7 @@ class LoadStyles extends LoadConfig implements ILoadAssets
       if($style['is_external'])
         wp_enqueue_style($style['name'] . '-' . $this->plugin_name, $style['file'], $deps, $this->plugin_version, true);
       else
-        wp_enqueue_style($style['name'] . '-' . $this->plugin_name, $this->path_to_assets . $style['file'], $deps, $this->plugin_version, $this->media);
+        wp_enqueue_style($style['name'] . '-' . $this->plugin_name, $this->path_to_assets . $style['file'], $deps, $this->plugin_version, $style['media']);
     }
   }
 
